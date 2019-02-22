@@ -133,7 +133,6 @@ install_dotfiles () {
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
-    info "linking $src to $dst"
     link_file "$src" "$dst"
   done
 }
@@ -197,4 +196,4 @@ then
 fi
 
 echo ''
-echo '  All installed!'
+echo 'Bootstrap complete.'
