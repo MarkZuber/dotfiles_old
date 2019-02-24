@@ -6,12 +6,14 @@ alias repos='cd ~/repos'
 alias bootstrap='~/repos/dotfiles/script/bootstrap && unalias -m "*" && source ~/.zshrc'
 
 devenv_path_ex() {
+    # https://stackoverflow.com/questions/54820639/how-do-i-create-a-zsh-alias-on-wsl-that-runs-vswhere-exe-and-executes-the-path
     path1="$(vswhere.exe -property productPath -format value)"
-    echo $path1
     path2=$(wslpath -a "$path1")
-    echo $path2
-    # wslpath -a "$(vswhere.exe -property productPath -format value)"
-    eval $path2
+    # Strip the trailing carriage return, if present
+    path2="${path2%$'\r'}"
+    # Execute the program, quoting the expansion
+    # to produce a single shell word for the command name.
+    "$path2"
 }
 
 alias devenv=devenv_path_ex
