@@ -109,6 +109,26 @@ if ! [ -d ~/.vim/colors/wombat/ ] ; then
     mv ~/.vim/colors/wombat/colors/* ~/.vim/colors/
 fi
 
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+sudo apt-get update
+
+sudo apt-get install -y \
+    apt-transport-https \
+    winbind \
+    libnss-winbind \
+    nodejs \
+    npm \
+    golang \
+    default-jdk \
+    screenfetch \
+    x11-utils \
+    cmake \
+    ssh \
+    openssh-server \
+    dotnet-sdk-2.1
+
 # Midnight commander install
 echo ''
 echo "Now installing Midnight commander..."

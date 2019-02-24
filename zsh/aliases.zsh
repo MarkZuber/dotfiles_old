@@ -26,6 +26,12 @@ devenv_path_p_ex() {
 alias devenv=devenv_path_ex
 alias devenvp=devenv_path_p_ex
 
+alias bw="powershell.exe ./build.ps1"
+
+alias msaln="cd ~/repos/msalnet"
+alias msalc="cd ~/repos/msalcpp"
+alias dotfiles="cd ~/repos/dotfiles"
+
 
 # Print each PATH entry on a separate line
 alias path="echo -e ${PATH//:/\\n}"
