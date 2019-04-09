@@ -75,6 +75,14 @@ if ! [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k/ ] ; then
     git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 fi
 
+# powerlevel10k install
+if ! [ -d ~/.oh-my-zsh/custom/themes/powerlevel10k/ ] ; then
+    echo ''
+    echo "Now installing powerlevel10k..."
+    echo ''
+    git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+fi
+
 # vimrc vundle install
 if ! [ -d ~/.vim/bundle/Vundle.vim/ ] ; then
     echo ''

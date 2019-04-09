@@ -1,6 +1,6 @@
 alias reload!='. ~/.zshrc'
 alias cls='clear' # Good 'ol Clear Screen command
-alias start='cmd.exe /c start ""'
+# alias start='cmd.exe /c start ""'
 alias repos='cd ~/repos'
 
 alias bootstrap='~/repos/dotfiles/script/bootstrap && unalias -m "*" && source ~/.zshrc'
