@@ -73,3 +73,6 @@
         default = current
 [credential]
 	helper = store
+[user]
+	email = mark@zube.com
+	name = Mark Zuber

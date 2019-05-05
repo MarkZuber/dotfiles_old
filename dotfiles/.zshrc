@@ -107,4 +107,4 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # fi
 
 
-[[ -s "/home/mzuber/.gvm/scripts/gvm" ]] && source "/home/mzuber/.gvm/scripts/gvm"
+[[ -s "~/.gvm/scripts/gvm" ]] && source "~/.gvm/scripts/gvm"

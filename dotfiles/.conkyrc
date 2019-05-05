@@ -1,0 +1,61 @@
+conky.config = {
+	use_xft = true,
+	font = '123:size=8',
+	xftalpha = 0.1,
+	update_interval = 1,
+	total_run_times = 0,
+
+	own_window = true,
+	own_window_class = 'Conky',
+	own_window_type = 'desktop',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_colour = '#000000',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+
+	double_buffer = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	default_color = 'white',
+	default_shade_color = 'red',
+	default_outline_color = 'green',
+	alignment = 'top_right',
+	gap_x = 100,
+	gap_y = 30,
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	net_avg_samples = 1,
+	override_utf8_locale = true,
+	use_spacer = 'left',
+
+	minimum_width = 0, minimum_height = 850,
+    maximum_width = 480
+};
+
+conky.text = [[
+${voffset 10}${color EAEAEA}${font GE Inspira:pixelsize=120}${time %I:%M}${font}${voffset -84}${offset 10}${color FFA300}${font GE Inspira:pixelsize=42}${time %d} ${voffset -15}${color EAEAEA}${font GE Inspira:pixelsize=22}${time  %B} ${time %Y}${font}${voffset 24}${font GE Inspira:pixelsize=58}${offset -148}${time %A}${font}
+${voffset 14}${goto 16}${font Ubuntu:pixelsize=12}${color FFA300}HD ${goto 65}$color${fs_free /} / ${fs_size /}${goto 170}${color FFA300}RAM ${goto 230}$color$mem / $memmax${goto 350}${color FFA300}CPU ${goto 420}$color${cpu cpu0}%${offset 4}/${offset 4}$color${acpitemp}°C
+${voffset 1}${goto 16}${color FFA300}UPTIME ${goto 65}$color${uptime}${goto 170}${color FFA300}SYSTEM ${goto 230}$color${nodename} ($machine)${goto 350}${color FFA300}THR/PROC: ${goto 420}$color$threads/$processes
+${voffset 1}${goto 16}${color FFA300}GPU ${goto 65}$color${execi 10 nvidia-smi -q -a | grep -Eo 'RTX .+'}${goto 170}${color FFA300}TEMP ${goto 230}$color${execi 60 nvidia-settings -query [gpu:0]/GPUCoreTemp -t}°C${goto 350}${color FFA300}POWER ${goto 420}$color${execi 10 nvidia-smi | grep -Eo '...%.+?W' | awk '{print $4}'}
+${voffset 1}${goto 16}${color FFA300}KERNEL${goto 65}$color${kernel}
+$hr
+${goto 16}${color}CPU 1 : ${color1}${cpu cpu1}% ${goto 100}${cpubar cpu1 12,125}  	${goto 240}${color}CPU 7 : ${goto 290}${color1}${cpu cpu5}% ${goto 320}${cpubar cpu5 12,125}
+${goto 16}${color}CPU 2 : ${color1}${cpu cpu2}% ${goto 100}${cpubar cpu2 12,125}  	${goto 240}${color}CPU 8 : ${goto 290}${color1}${cpu cpu6}% ${goto 320}${cpubar cpu6 12,125}
+${goto 16}${color}CPU 3 : ${color1}${cpu cpu3}% ${goto 100}${cpubar cpu3 12,125}  	${goto 240}${color}CPU 9 : ${goto 290}${color1}${cpu cpu7}% ${goto 320}${cpubar cpu7 12,125}
+${goto 16}${color}CPU 4 : ${color1}${cpu cpu4}% ${goto 100}${cpubar cpu4 12,125}  	${goto 240}${color}CPU 10 : ${goto 290}${color1}${cpu cpu8}% ${goto 320}${cpubar cpu8 12,125}
+${goto 16}${color}CPU 5 : ${color1}${cpu cpu4}% ${goto 100}${cpubar cpu5 12,125}  	${goto 240}${color}CPU 11 : ${goto 290}${color1}${cpu cpu8}% ${goto 320}${cpubar cpu8 12,125}
+${goto 16}${color}CPU 6 : ${color1}${cpu cpu4}% ${goto 100}${cpubar cpu6 12,125}  	${goto 240}${color}CPU 12 : ${goto 290}${color1}${cpu cpu8}% ${goto 320}${cpubar cpu8 12,125}
+$hr
+${goto 16}${color1}Top Processes:
+${goto 24}${color1}Name ${goto 160}PID ${goto 200}CPU% ${goto 250}MEM%  ${goto 310}TIME   ${goto 370}USER
+${goto 24}${color}${top name 1} ${goto 150}${top pid 1} ${goto 200}${top cpu 1} ${goto 250}${top mem 1} ${goto 300}${top time 1} ${goto 370}${top user 1}
+${goto 24}${color}${top name 2} ${goto 150}${top pid 2} ${goto 200}${top cpu 2} ${goto 250}${top mem 2} ${goto 300}${top time 2} ${goto 370}${top user 2}
+${goto 24}${color}${top name 3} ${goto 150}${top pid 3} ${goto 200}${top cpu 3} ${goto 250}${top mem 3} ${goto 300}${top time 3} ${goto 370}${top user 3}
+${goto 24}${color}${top name 4} ${goto 150}${top pid 4} ${goto 200}${top cpu 4} ${goto 250}${top mem 4} ${goto 300}${top time 4} ${goto 370}${top user 4}
+${goto 24}${color}${top name 5} ${goto 150}${top pid 5} ${goto 200}${top cpu 5} ${goto 250}${top mem 5} ${goto 300}${top time 5} ${goto 370}${top user 5}
+$hr
+]];

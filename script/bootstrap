@@ -140,33 +140,6 @@ install_dotfiles () {
 setup_gitconfig
 install_dotfiles
 
-# If we're on a Mac, let's install and setup homebrew.
-if [ "$(uname -s)" == "Darwin" ]
-then
-  info "installing dependencies"
-  if source bin/dot | while read -r data; do info "$data"; done
-  then
-    success "dependencies installed"
-  else
-    fail "error installing dependencies"
-  fi
-fi
-## JD edit
-
-#backup old bin, if exists
-if [ -L $HOME/bin ]
-then
-    echo ''
-    echo "current $HOME/bin folder found!!! Creating backup..."
-    sudo mv $HOME/bin bin_old
-else
-    echo ''
-    echo "No current $HOME/bin folder found. Proceeding to link bin folder for tumx scripts..."
-fi
-
-# symlink .dotfiles bin to ~
-ln -s $DOTFILES_ROOT/bin $HOME/bin
-
 # # symlink .dotfiles tmux to ~ & plugin mgr install
 if ! [ -L $HOME/.tmux ]
 then
